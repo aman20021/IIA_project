@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+        .school {
+            padding: 20px;
+            margin: 10px;
+            margin-right: 20px;
+            background-color: #f7f4f4;
+            width: 40%;
+            height: 250px;
+            float: left
+        }
+
+        .detail {
+                margin-left: 50px;
+                font-size: 20px;
+        }
+        
+        .admission {
+            padding: 20px;
+            margin: 5px;
+            background-color: #f7f4f4;
+            width: 40%;
+            display: flex;
+            float: left
+        }
+        td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">School Application </a>
+<!--        <a href="#">About</a>-->
+    </nav>
+    <hr>
+     <h1>By Aggregator 1 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; By Aggregator 2</h1>
+    <div class="cont">
+        {% block content %} {% endblock %}
+    </div>
+       <!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Chat with us!
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+<!--                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"-->
+<!--                                    onclick="heartButton()"></i>-->
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script src="{{ url_for('static', filename='scripts/responses.js') }}"></script> -->
+<script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} data {% endblock %}</h1>
+    {% for dt in data %}
+        <div class='data'>
+            <h3>#{{ dt[0] }} - {{ dt[1] }} - {{ dt[2] }}</h3>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for school in schools %}
+        <div class='school'>
+            <h3>#{{ school[0] }} - {{ school[1] }} </h3>
+            <h4> -> Address {{ school[2] }}</h4>
+            <i><p>({{ school[3] }} Website)</p></i>
+            <p class='detail'>{{ school[4] }}</p>
+            <i><p>Level of involvement in CBSE Activities {{ school[10] }}</p></i>
+        </div>
+    {% endfor %}
+{% endblock %}
